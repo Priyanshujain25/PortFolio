@@ -1,0 +1,151 @@
+/* src/App.css */
+
+/* Global */
+:root {
+  --bg: #0f172a;         /* dark navy */
+  --card: #1e293b;       /* soft dark card */
+  --accent: #3b82f6;     /* bright blue */
+  --accent-light: #60a5fa;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 2rem;
+}
+.links a {
+  margin-right: 1rem;   /* adds spacing between anchor tags */
+}
+/* Section titles */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+  text-align: center;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.profile-header h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+.profile-header p {
+  color: var(--muted);
+  margin: 0.2rem 0;
+}
+.profile-header .links {
+  margin-top: 1rem;
+}
+.profile-header .links a {
+  margin: 0 0.8rem;
+  color: var(--accent-light);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.profile-header .links a:hover {
+  color: var(--accent);
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.skill-tag {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+.skill-tag:hover {
+  transform: scale(1.08);
+}
+
+/* Cards (Education, Projects) */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  transition: transform 0.25s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Education */
+.education-list {
+  display: grid;
+  gap: 1.5rem;
+}
+.education-card h3 {
+  margin: 0.2rem 0;
+  color: var(--accent-light);
+}
+.education-card .institution {
+  font-style: italic;
+  color: var(--muted);
+}
+.education-card .date {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.project-card h3 {
+  margin: 0.5rem 0;
+}
+.project-card .skills-container {
+  margin-top: 1rem;
+}
+.skill-tag.small {
+  background: #334155;
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+}
