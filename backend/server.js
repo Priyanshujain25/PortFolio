@@ -13,7 +13,7 @@ const app = express();
 
 // Use CORS - configure for your frontend URL in production
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://portfolio-nbhc.onrender.com",
     credentials: true, // allow frontend to send cookies
   }));
 
