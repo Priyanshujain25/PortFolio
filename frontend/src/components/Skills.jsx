@@ -6,7 +6,7 @@ const Skills = ({ skills }) => {
     <section>
       <h2>Top Skills</h2>
       <div className="skills-container">
-        {skills.sort((a, b) => b.proficiency - a.proficiency).map(skill => (
+        {(skills && Array.isArray(skills) ? skills : []).sort((a, b) => b.proficiency - a.proficiency).map(skill => (
           <span key={skill.name} className="skill-tag">
             {skill.name}
           </span>
