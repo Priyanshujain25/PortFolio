@@ -5,11 +5,6 @@ import connectDB from './config/db.js';
 import profileRoutes from './routes/profileRoutes.js';
 import path from "path";
 import { fileURLToPath } from "url";
-import mongoose from 'mongoose';
-
-
-import Profile from './models/profileModel.js';
-import { profileData } from './data/seedData.js'; 
 
 dotenv.config();
 connectDB();
@@ -52,20 +47,3 @@ app.listen(PORT,"0.0.0.0", () => console.log(`Server running on port ${PORT}`));
 
 
 
-dotenv.config();
-
-const importData = async () => {
-  try {
-    await connectDB();
-    await Profile.deleteMany(); // Clear existing profiles
-    await Profile.create(profileData);
-
-    console.log('Data Imported!');
-    process.exit();
-  } catch (error) {
-    console.error(`${error}`);
-    process.exit(1);
-  }
-};
-
-importData();
