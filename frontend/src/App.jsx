@@ -21,6 +21,7 @@ function App() {
       try {
         setLoading(true);
         const response = await axios.get(`${API_URL}/api/profile`);
+        console.log(response)
         setProfile(response.data);
       } catch (err) {
         setError('Failed to fetch profile data. Is the backend running?');
