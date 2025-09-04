@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // API Routes
-app.use('/', profileRoutes);
+app.use('/api/', profileRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is running...');
